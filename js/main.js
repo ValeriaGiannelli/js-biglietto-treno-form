@@ -7,48 +7,43 @@
 
 
 
-let ticketPrice;
-let km;
-let ageUser;
-let fullPrice;
-let discount20;
-let discount40;
-
-
 // prendo l'elemento che deve cliccare la persona
 const generate = document.querySelector(".genera");
 console.log(generate);
 
-// quando clicco su "Genera" dovrà fare i calcoli
+// prendo il div che contiene il prezzo finale del biglietto
+const displayTicket = document.querySelector(".output_ticket");
+
+// quando clicco su "Genera" dovrà fare i calcoli e non solo...
 generate.addEventListener('click',
     function(){
         // Prendere il valore che ha inserito l'utente in "km da percorrere", trasformalo in numero e metterlo nella variabile
-        km = parseInt(document.getElementById("km").value);
+        let km = parseInt(document.getElementById("km").value);
         console.log("I km che ha inserito sono:", km);
 
         // Prendere il valore che ha inserito l'utente in "inserisci la tua età", trasformarlo in numero e metterlo nella variabile
-        ageUser = parseInt(document.getElementById("age").value);
+        let ageUser = parseInt(document.getElementById("age").value);
         console.log("L'età della persona è:", ageUser);
 
         // calcolo prezzo totale
-        fullPrice = km * 0.21;
+        let fullPrice = km * 0.21;
         console.log("il prezzo totale è:", fullPrice);
 
         // calcolo sconto
-        discount20 = fullPrice * 20 / 100;
+        let discount20 = fullPrice * 20 / 100;
         console.log("lo sconto del 20% è:", discount20);
 
-        discount40 = fullPrice * 40 / 100;
+        let discount40 = fullPrice * 40 / 100;
         console.log("lo sconto del 40% è:", discount40);
 
         if(ageUser < 18){ // se età minore 18 -> sconto 20%
-                ticketPrice = fullPrice - discount20;
+                let ticketPrice = fullPrice - discount20;
                 console.log("hai diritto a:", discount20, "quindi ti costa:", ticketPrice);
             } else if (ageUser > 65){ // se età maggiore 65 -> sconto 40%
-                ticketPrice = fullPrice - discount40;
+                let ticketPrice = fullPrice - discount40;
                 console.log("hai diritto a:", discount40, "quindi ti costa:", ticketPrice);
             } else { // altrimenti prezzo intero 0.21 * numero chilometri
-                ticketPrice = fullPrice;
+                let ticketPrice = fullPrice;
                 console.log("non hai sconti. Qundi ti costa:", ticketPrice);
             }
         
@@ -61,6 +56,8 @@ generate.addEventListener('click',
         // output a schermo: "il prezzo del biglietto è: "
         document.querySelector(".price").innerHTML = ticketPriceRounded;
         
+        // mostrare il biglietto aggiungendo all'elemento la classe "show" che ho dato in css
+        displayTicket.classList.add("show");
     }
 );
 
