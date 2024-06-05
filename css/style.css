@@ -1,0 +1,28 @@
+/* css generale */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.flex{
+    display: flex;
+    gap:40px;
+}
