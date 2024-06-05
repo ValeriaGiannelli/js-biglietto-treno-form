@@ -14,31 +14,6 @@ let fullPrice;
 let discount20;
 let discount40;
 
-// Prendere il valore che ha inserito l'utente in "km da percorrere", trasformalo in numero e metterlo nella variabile
-// const km = parseInt(document.getElementById("km").value);
-
-// console.log("I km che ha inserito sono:", km);
-
-// // Prendere il valore che ha inserito l'utente in "inserisci la tua età", trasformarlo in numero e metterlo nella variabile
-// const ageUser = parseInt(document.getElementById("age").value);
-
-// console.log("L'età della persona è:", ageUser);
-
-
-
-// calcolo prezzo totale
-// fullPrice = km * 0.21;
-// console.log("il prezzo totale è:", fullPrice);
-
-// // calcolo sconto
-// discount20 = fullPrice * 20 / 100;
-// console.log("lo sconto del 20% è:", discount20);
-
-// discount40 = fullPrice * 40 / 100;
-// console.log("lo sconto del 40% è:", discount40);
-
-
-
 
 // prendo l'elemento che deve cliccare la persona
 const generate = document.querySelector(".genera");
@@ -76,21 +51,19 @@ generate.addEventListener('click',
                 ticketPrice = fullPrice;
                 console.log("non hai sconti. Qundi ti costa:", ticketPrice);
             }
+        
+        console.log("il costo del tuo biglietto è di:", ticketPrice);
+
+        // arrotondo il prezzo con due decimali
+        let ticketPriceRounded = ticketPrice.toFixed(2);
+        console.log("il costo del tuo biglietto è di:", ticketPriceRounded);   
+        
+        // output a schermo: "il prezzo del biglietto è: "
+        document.querySelector(".price").innerHTML = ticketPriceRounded;
+        
     }
 );
 
 
 
- 
 
-
-// console.log("il costo del tuo biglietto è di:", ticketPrice);
-
-
-// // arrotondo il prezzo con due decimali
-// let ticketPriceRounded = ticketPrice.toFixed(2);
-// console.log(ticketPriceRounded);
-
-
-// // output a schermo: "il prezzo del biglietto è: "
-// document.getElementById("my_ticket").innerHTML = `Il prezzo del tuo biglietto è di ${ticketPriceRounded} euro!`;
