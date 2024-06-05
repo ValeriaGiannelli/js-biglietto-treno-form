@@ -54,7 +54,7 @@ generate.addEventListener('click',
         console.log("il costo del tuo biglietto è di:", ticketPriceRounded);   
         
         // output a schermo: "il prezzo del biglietto è: "
-        document.querySelector(".price").innerHTML = ticketPriceRounded;
+        document.querySelector(".price").innerHTML = `${ticketPriceRounded} €`;
         
         // mostrare il biglietto aggiungendo all'elemento la classe "show" che ho dato in css
         displayTicket.classList.add("show");
