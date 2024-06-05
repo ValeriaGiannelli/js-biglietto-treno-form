@@ -69,11 +69,19 @@ generate.addEventListener('click',
 
         // inserisco il tipo di offerta che ha la persona
         document.getElementById("offerta").innerHTML = offer;
+
+        // inserimento di carrozza e codice CP
+        document.getElementById("carrozza").innerHTML = Math.floor(Math.random()*10+1);
+
+        document.getElementById("codice_cp").innerHTML = Math.floor(Math.random()*1000+1);
+
         
         // mostrare il biglietto aggiungendo all'elemento la classe "show" che ho dato in css
         displayTicket.classList.add("show");
     }
 );
+
+
 
 
 
