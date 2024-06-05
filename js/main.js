@@ -19,29 +19,45 @@ const ageUser = parseInt(document.getElementById("age").value);
 console.log("L'età della persona è:", ageUser);
 
 
+
 // calcolo prezzo totale
-// const fullPrice = km * 0.21;
-// console.log("il prezzo totale è:", fullPrice);
+const fullPrice = km * 0.21;
+console.log("il prezzo totale è:", fullPrice);
 
-// // calcolo sconto
-// let discount20 = fullPrice * 20 / 100;
-// console.log("lo sconto del 20% è:", discount20);
+// calcolo sconto
+let discount20 = fullPrice * 20 / 100;
+console.log("lo sconto del 20% è:", discount20);
 
-// let discount40 = fullPrice * 40 / 100;
-// console.log("lo sconto del 40% è:", discount40);
+let discount40 = fullPrice * 40 / 100;
+console.log("lo sconto del 40% è:", discount40);
+
+
+
+
+// prendo l'elemento che deve cliccare la persona
+const generate = document.querySelector(".genera");
+console.log(generate);
+
+// quando clicco su "Genera" dovrà fare i calcoli
+generate.addEventListener('click',
+    function(){
+        if(ageUser < 18){ // se età minore 18 -> sconto 20%
+                ticketPrice = fullPrice - discount20;
+                console.log("hai diritto a:", discount20, "quindi ti costa:", ticketPrice);
+            } else if (ageUser > 65){ // se età maggiore 65 -> sconto 40%
+                ticketPrice = fullPrice - discount40;
+                console.log("hai diritto a:", discount40, "quindi ti costa:", ticketPrice);
+            } else { // altrimenti prezzo intero 0.21 * numero chilometri
+                ticketPrice = fullPrice;
+                console.log("non hai sconti. Qundi ti costa:", ticketPrice);
+            }
+    }
+);
+
+
+
  
 
-// // condizioni in base all'età
-// if(ageUser < 18){ // se età minore 18 -> sconto 20%
-//     ticketPrice = fullPrice - discount20;
-//     console.log("hai diritto a:", discount20, "quindi ti costa:", ticketPrice);
-// } else if (ageUser > 65){ // se età maggiore 65 -> sconto 40%
-//     ticketPrice = fullPrice - discount40;
-//     console.log("hai diritto a:", discount40, "quindi ti costa:", ticketPrice);
-// } else { // altrimenti prezzo intero 0.21 * numero chilometri
-//     ticketPrice = fullPrice;
-//     console.log("non hai sconti. Qundi ti costa:", ticketPrice);
-// }
 
 // console.log("il costo del tuo biglietto è di:", ticketPrice);
 
