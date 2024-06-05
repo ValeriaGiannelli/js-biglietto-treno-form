@@ -6,7 +6,7 @@
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
 
-
+let ticketPrice;
 // prendo l'elemento che deve cliccare la persona
 const generate = document.querySelector(".genera");
 console.log(generate);
@@ -37,13 +37,13 @@ generate.addEventListener('click',
         console.log("lo sconto del 40% è:", discount40);
 
         if(ageUser < 18){ // se età minore 18 -> sconto 20%
-                let ticketPrice = fullPrice - discount20;
+                ticketPrice = fullPrice - discount20;
                 console.log("hai diritto a:", discount20, "quindi ti costa:", ticketPrice);
             } else if (ageUser > 65){ // se età maggiore 65 -> sconto 40%
-                let ticketPrice = fullPrice - discount40;
+                ticketPrice = fullPrice - discount40;
                 console.log("hai diritto a:", discount40, "quindi ti costa:", ticketPrice);
             } else { // altrimenti prezzo intero 0.21 * numero chilometri
-                let ticketPrice = fullPrice;
+                ticketPrice = fullPrice;
                 console.log("non hai sconti. Qundi ti costa:", ticketPrice);
             }
         
