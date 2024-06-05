@@ -82,7 +82,22 @@ generate.addEventListener('click',
 );
 
 
+// prendo il bottone per annullare
+const clearAll = document.querySelector(".pulisci");
 
+
+// quando clicco su "Annulla" mi cancella tutti i campi
+clearAll.addEventListener('click',
+    function(){
+        // imposto i valori a vuoto
+        document.getElementById("km").value='';
+        document.getElementById("age").value='';
+        document.getElementById("user_name").value='';
+
+        // tolgo la classe "show" dal ticket così si elimina
+        displayTicket.classList.remove("show");
+    }
+);
 
 
 
